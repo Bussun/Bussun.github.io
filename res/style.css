@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #EBEBEB;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vw;
+}
+
+.project {
+    border: 2px solid transparent;
+    border-radius: 20px;
+    display: flex;
+    width: 60vw;
+    gap: 1vw;
+    padding: 0.5vh 0.5vw 0.5vh 1vw;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+}
+
+.screenshot.editor {
+    width: 55%;
+    height: auto;
+}
+
+.name-status {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-name {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.project-description {
+    
+}
+
+.preview_download {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.download {
+    background-color: royalblue;
+    border: 1px solid royalblue;
+    border-radius: 10px;
+    color: white;
+    transition: 0.1s all ease;
+    width: 155px;
+    height: 45px;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.download:hover {
+    transform: scale(1.1);
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+}
+
+.status {
+    padding: 0.2vw 0.5vw 0.2vw 0.5vw;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.status.beta {
+    border-color: orange;
+    color: orange;
+}
+
+.status.release {
+    border-color: green;
+    color: green;
+}
+
+/*.status.language {
+    border-color: red;
+    color: red;
+}*/
