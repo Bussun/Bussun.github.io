@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.name {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.nav {
+
+}
+
+.nav-menu {
+    display: flex;
+    gap: 3vw;
+}
+
+.nav-child {
+    list-style-type: none;
+}
+
+.nav-items {
+    text-decoration: none;
+}
+
+.main {
+    padding: 5vh 0 5vh 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebebeb;
+    gap: 2vw;
+}
+
+.desc {
+    font-weight:600;
+}
+.screenshots {
+    display: flex;
+    gap: 15vw;
+}
+
+.screenshot {
+    width: 450px;
+    height: auto;
+}
+
+.download {
+    background-color: royalblue;
+    border: 1px solid royalblue;
+    border-radius: 10px;
+    color: white;
+    transition: 0.1s all ease;
+    width: 155px;
+    height: 45px;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .download:hover {
+        transform: scale(1.1);
+    }
+
+.downloads-tags {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+}
+.tags {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.downloads {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.status {
+    padding: 0.2vw 0.5vw 0.2vw 0.5vw;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+    .status.beta {
+        border-color: orange;
+        color: orange;
+    }
+
+    .status.release {
+        border-color: green;
+        color: green;
+    }
+
+/*.status.language {
+    border-color: red;
+    color: red;
+}*/
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3vw;
+    padding: 5px;
+}
+
+.version {
+    border: 1px solid black;
+    border-radius: 15px;    
+    padding: 10px;
+}
