@@ -83,6 +83,20 @@ body {
         transform: scale(1.1);
     }
 
+    .download_inactive {
+        background-color: gray; /* Nice, both names work */
+        border: 1px solid grey;
+        border-radius: 10px;
+        color: white;
+        width: 155px;
+        height: 45px;
+        text-decoration: none;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 .downloads-tags {
     display: flex;
     flex-direction: row;
