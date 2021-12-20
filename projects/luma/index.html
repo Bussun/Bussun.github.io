@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>Luma editor</title>
+    <link rel="shortcut icon" type="image" href="Luma_icon.ico" />
 </head>
 <body>
     <div class="header">
-        <p class="name">Luma editor</p>
+        <div id="nameContainer">
+            <img src="Luma_icon.ico" alt="Icon" id="icon">
+            <p class="name">Luma editor</p>
+        </div>
+        
         <div class="nav">
             <ul class="nav-menu">
                 <li class="nav-child"><a class="nav-items" href="#features">Features</a></li>
@@ -26,12 +31,11 @@
             </p>
             <div class="downloads-tags">
                 <div class="downloads">
-                    <a class="download" href="../../res/downloads/Luma_0.7.1beta.zip" download="Luma_0.7.1beta.zip">Download latest beta v0.7.1</a>
-                    <!--<a class="downloads" href="#" download="Luma_1.0release.zip">Download latest release v1.0</a>-->
+                    <a class="download" href="../../res/downloads/Luma_1.0release.zip" download="Luma_1.0release.zip">Download 1.0 release</a>
                 </div>
                 <div class="tags">
                     <div class="release-status">
-                        <p class="status beta">BETA</p>
+                        <p class="status release">RELEASE</p>
                     </div>
                     <div class="language">
                         <p class="status language">C#</p>
@@ -55,6 +59,22 @@
     <div id="changelog">
         <h2>Changelog - .NET 6 / C# version</h2>
         <div class="container">
+            <div class="version">
+                <h3>Version 1.0 RELEASE</h3>
+                <h4>Added:</h4>
+                <ul>
+                    <li>Started working on flow editing</li>
+                </ul>
+                <h4>Deleted:</h4>
+                <ul>
+                    <li>Nothing</li>
+                </ul>
+                <h4>Changed:</h4>
+                <ul>
+                    <li>Refactoring some code</li>
+                    <li>New updater</li>
+                </ul>
+            </div>
             <div class="version">
                 <h3>Version 0.7.1 - BETA</h3>
                 <h4>Added:</h4>

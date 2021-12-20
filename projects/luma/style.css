@@ -24,6 +24,17 @@ body {
     font-weight: 600;
 }
 
+#nameContainer {
+    display:flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+#icon {
+    width: 2vw;
+    height: 2vw;
+}
+
 .nav {
 
 }
