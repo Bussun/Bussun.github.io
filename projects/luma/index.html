@@ -2,51 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
     <title>Luma editor</title>
-    <link rel="shortcut icon" type="image" href="Luma_icon.ico" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./Luma_icon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="header">
-        <div id="nameContainer">
-            <img src="Luma_icon.ico" alt="Icon" id="icon">
-            <p class="name">Luma editor</p>
-        </div>
-        
-        <div class="nav">
-            <ul class="nav-menu">
-                <li class="nav-child"><a class="nav-items" href="#features">Features</a></li>
-                <li class="nav-child"><a class="nav-items" href="#changelog">Changelog</a></li>
-            </ul>
-        </div>
+    <div style="color: red; font-weight: 600;">
+        PAGE UNDER CONSTRUCTION: SEE THE <a href="./old/index.html">OLD PAGE</a> IF YOU NEED TO NAVIGATE QUICKLY
     </div>
     <div class="main">
-        <div class="screenshots">
-            <img src="../../res/screenshots/luma_screenshot.png" alt="editor screenshot" class="screenshot">
-
+        <div class="logo">
+            <img src="./Luma_icon.ico" alt="Luma editor logo (litterally a green luma)" class="mainLogo">
+            <p class="softNameMain">Luma editor</p>
         </div>
         <div class="description">
             <p class="desc">
-                A new BMG editor for Super Mario Galaxy. <br />
+                A new BMG editor for Super Mario Galaxy. Now includes a graphical user interface! (More coming in future versions.) <br />
             </p>
-            <div class="downloads-tags">
-                <div class="downloads">
-                    <a class="download" href="../../res/downloads/Luma_1.0release.zip" download="Luma_1.0release.zip">Download 1.0 release</a>
-                </div>
-                <div class="tags">
-                    <div class="release-status">
-                        <p class="status release">RELEASE</p>
-                    </div>
-                    <div class="language">
-                        <p class="status language">C#</p>
-                    </div>
-                </div>
+            <div class="mainBtns">
+            <a href="#features" class="moreBtn">Discover more!</a>
+            <a href="#downloads" class="moreBtn">Downloads</a>
             </div>
         </div>
     </div>
-
     <div id="features">
-        <h2>Features - C#</h2>
+        <h1>Features (C# version)</h1>
         <ul>
             <li>Reading and editing message files from Super Mario Galaxy</li>
             <li>Editing message properties</li>
@@ -56,104 +36,63 @@
             <li>Editing from the .arc archive file</li>
         </ul>
     </div>
-    <div id="changelog">
-        <h2>Changelog - .NET 6 / C# version</h2>
-        <div class="container">
-            <div class="version">
-                <h3>Version 1.0 RELEASE</h3>
-                <h4>Added:</h4>
-                <ul>
-                    <li>Started working on flow editing</li>
-                </ul>
-                <h4>Deleted:</h4>
-                <ul>
-                    <li>Nothing</li>
-                </ul>
-                <h4>Changed:</h4>
-                <ul>
-                    <li>Refactoring some code</li>
-                    <li>New updater</li>
-                </ul>
+    <div id="downloads">
+        <h1>Downloads</h1>
+        <div class="downloadContainer">
+            <div class="download csharp release">
+                <div>
+                    <img src="./Luma_icon.ico" alt="Luma editor logo (litterally a green luma)" class="mainLogo">
+                </div>
+                <div>
+                    <p class="name">Luma</p>
+                </div>
+                <div>
+                    <p><ion-icon name="logo-windows"></ion-icon> | C# version 1.0</p>
+                </div>
+                <div>
+                    <p>The most mature version of Luma. Recommended download.</p>
+                </div>
+                <div>
+                    <a href="../../res/downloads/Luma_1.0release.zip" download="Luma_1.0release.zip" class="moreBtn">Download</a>
+                </div>
             </div>
-            <div class="version">
-                <h3>Version 0.7.1 - BETA</h3>
-                <h4>Added:</h4>
-                <ul>
-                    <li>It now backs up your file when you open it, in case of corruption</li>
-                </ul>
-                <h4>Deleted:</h4>
-                <ul>
-                    <li>Nothing</li>
-                </ul>
-                <h4>Changed:</h4>
-                <ul>
-                    <li>Nothing</li>
-                </ul>
-            </div>
-            <div class="version">
-                <h3>Version 0.7 - BETA</h3>
-                <h4>Added:</h4>
-                <ul>
-                    <li>Nothing</li>
-                </ul>
-                <h4>Deleted:</h4>
-                <ul>
-                    <li>Nothing</li>
-                </ul>
-                <h4>Changed:</h4>
-                <ul>
-                    <li>UI updates</li>
-                </ul>
-            </div>
-            <div class="version">
-                <h3>Version 0.6 - BETA</h3>
-                <h4>Added:</h4>
-                <ul>
-                    <li>You can now create new message entries</li>
-                </ul>
-                <h4>Deleted:</h4>
-                <ul>
-                    <li>Nothing</li>
-                </ul>
-                <h4>Changed:</h4>
-                <ul>
-                    <li>Mainly code optimization</li>
-                </ul>
-            </div>
-            <div class="version">
-                <h3>Version 0.4.5 - BETA</h3>
-                <h4>Added:</h4>
-                <ul>
-                    <li>Update checker</li>
-                </ul>
-                <h4>Deleted:</h4>
-                <ul>
-                    <li>Nothing</li>
-                </ul>
-                <h4>Changed:</h4>
-                <ul>
-                    <li>[TEMPORARY] Improved FLW1 and FLI1 section parsing</li>
-                    <li>Rewrote code to reduce program size and improve stability</li>
-                </ul>
-            </div>
-            <div class="version">
-                <h3>Version 0.4 - Initial beta release</h3>
-                <h4>Added:</h4>
-                <ul>
-                    <li>Opening messages from ARC files</li>
-                    <li>Escape sequences support</li>
-                    <li>Message properties editing</li>
-                </ul>
-                <h4>Deleted:</h4>
-                <ul>
-                    <li>Nothing</li>
-                </ul>
-                <h4>Changed:</h4>
-                <ul>
-                    <li>Nothing</li>
-                </ul>
+            <div class="download csharp beta">
+                <div>
+                    <img src="./Luma_yellow.png" alt="Luma editor logo (litterally a green luma)" class="mainLogo">
+                </div>
+                <div>
+                    <p class="name">Luma BETA</p>
+                </div>
+                <div>
+                    <p><ion-icon name="logo-windows"></ion-icon> | C# version 1.1</p>
+                </div>
+                <div>
+                    <p>Beta exe of the C# version. Use this one to get new features earlier (May be buggier than release !)</p>
+                    <p>(Well it just got out of beta, maybe wait a little bit before looking a new one:p)</p>
+                </div>
             </div>
         </div>
     </div>
+    <div id="changelogs">
+        <div class="tabs">
+            <button class="tab-btn" id="csharp-changelogBtn">C# / .NET 6 version</button>
+            <button class="tab-btn" id="cpp-changelogBtn">C++ version</button>
+        </div>
+
+        <div class="tab" id="csharp-changelog">
+            <h1>C# / .NET 6 version changelog</h1>
+        </div>
+        <div class="tab" id="cpp-changelog" style="display: none;">
+            <h1>C++ version changelog</h1>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright © Denis L. 2021</p>
+    </footer>
+    <script src="script.js" defer></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

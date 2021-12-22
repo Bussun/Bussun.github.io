@@ -1,0 +1,64 @@
+{
+    "C#" : {
+        "0.4": {
+            "comment": "Initial beta release",
+            "beta": true,
+            "added": {
+                "1": "Opening messages from ARC",
+                "2": "Escape sequences support",
+                "3": "Message properties editing"
+            },
+            "deleted": "Nothing",
+            "changed": "Nothing"
+        },
+        "0.4.5": {
+            "comment": "",
+            "beta": true,
+            "added": {
+                "1": "Update checker"
+            },
+            "deleted": "Nothing",
+            "changed": {
+                "1": "[TEMPORARY] Improved FLW1 and FLI1 section parsing",
+                "2": "Refactored some code to reduce program size and improve stability"
+            }
+        },
+        "0.6": {
+            "comment": "",
+            "beta": true,
+            "added": {
+                "1": "New message entries supported"
+            },
+            "deleted": "Nothing",
+            "changed": {
+                "1": "Code refactoring"
+            }
+        },
+        "0.7": {
+            "comment": "",
+            "beta": true,
+            "added": "Nothing",
+            "deleted": "Nothing",
+            "changed": {
+                "1": "UI updates"
+            }
+        },
+        "0.7.1": {
+            "comment": "",
+            "beta": true,
+            "added": {
+                "1": "ARC file backup in case of corruption"
+            },
+            "deleted": "Nothing",
+            "changed": "Nothing"
+        }
+        
+    },
+    "C++" : {
+        "verNo": "0.0.0",
+        "comment": "C++ rewrite started, more news coming later.",
+        "added": "Nothing",
+        "deleted": "Nothing",
+        "changed": "Nothing"
+    }
+}
