@@ -1,4 +1,21 @@
-{
+const cppChangelogBtn = document.querySelector('#cpp-changelogBtn');
+const cppChangelogTab = document.querySelector('#cpp-changelog');
+const csharpChangelogBtn = document.querySelector('#csharp-changelogBtn');
+const csharpChangelogTab = document.querySelector('#csharp-changelog');
+
+csharpChangelogBtn.addEventListener('click', () => {
+    cppChangelogTab.style.display = "none";
+    csharpChangelogTab.style.display = "initial";
+});
+
+cppChangelogBtn.addEventListener('click', () => {
+    csharpChangelogTab.style.display = "none";
+    cppChangelogTab.style.display = "initial";
+});
+
+/* Changelog data */ 
+//JSON file loading is a freaking nightmare or I didn't look at the right place so I'm putting it here
+const changelog = `{
     "CSharp" : [
         {
             "version": "0.4",
@@ -79,4 +96,16 @@
         "deleted": "Nothing",
         "changed": "Nothing"
     }
-}
+}`
+
+let parsedThing = JSON.parse(changelog);
+csChglog = parsedThing.CSharp;
+
+csChglog.forEach(obj => {
+    const versionDiv = document.createElement('div');
+    versionDiv.classList.add("version");
+    const versionTag = document.createElement('p');
+    versionTag.innerText = obj.version;
+    versionDiv.appendChild(versionTag);
+    csharpChangelogTab.appendChild(versionDiv);  
+});

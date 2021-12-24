@@ -98,6 +98,9 @@ a.moreBtn {
     gap: 10vw;
 }
 
+.version {
+    border: 2px solid red;
+}
 #features {
     display: flex;
     flex-direction: column;
