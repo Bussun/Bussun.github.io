@@ -98,9 +98,44 @@ a.moreBtn {
     gap: 10vw;
 }
 
+.tabs {
+    border: 1px solid red;
+    margin-top: 15vh;
+    display: flex;
+    justify-content: center;
+    flex: 1 0 auto;
+}
+
+.tab-btn {
+    border: none;
+    width: 100%;
+}
+
+.tab-btn.selected {
+    background: blue;
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.csharp-changelog {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    flex-wrap: wrap;
+}
+
 .version {
     border: 2px solid red;
 }
+
+.version.beta {
+    background-color: orange;
+}
+
 #features {
     display: flex;
     flex-direction: column;
@@ -108,7 +143,9 @@ a.moreBtn {
 }
 
 footer {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ededed;
 }

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Luma editor</title>
-    <!-- Using require.js -->
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./Luma_icon.ico" type="image/x-icon">
 </head>
@@ -76,15 +75,21 @@
     </div>
     <div id="changelogs">
         <div class="tabs">
-            <button class="tab-btn" id="csharp-changelogBtn">C# / .NET 6 version</button>
+            <button class="tab-btn selected" id="csharp-changelogBtn">C# / .NET 6 version</button>
             <button class="tab-btn" id="cpp-changelogBtn">C++ version</button>
         </div>
 
-        <div class="tab" id="csharp-changelog">
+        <div class="tab" id="csharp-changelog-tab">
             <h1>C# / .NET 6 version changelog</h1>
+            <div class="csharp-changelog">
+
+            </div>
         </div>
-        <div class="tab" id="cpp-changelog" style="display: none;">
+        <div class="tab" id="cpp-changelog-tab" style="display: none;">
             <h1>C++ version changelog</h1>
+            <div class="cpp-changelog">
+                <p>Woah, it's pretty empty here !</p>
+            </div>
         </div>
     </div>
 
