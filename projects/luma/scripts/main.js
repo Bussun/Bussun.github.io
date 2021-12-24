@@ -97,8 +97,8 @@ const changelog = `{
             ]
         },
         {
-            "version": "1.1",
-            "comment": "Unreleased beta",
+            "version": "1.1 beta",
+            "comment": "Little endian beta",
             "beta": true,
             "added": [
                 "[WIP] Little endian support"
