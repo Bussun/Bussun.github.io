@@ -45,6 +45,6 @@ function fillChangelog(data) {
             versionDiv.appendChild(changedStuffP);
         });
     
-        CSharpChangelogContainer.appendChild(versionDiv);  
+        CSharpChangelogContainer.insertBefore(versionDiv, CSharpChangelogContainer.firstChild);  
     });
 }
