@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMG File format documentation</title>
+    <link rel="stylesheet" href="res/bmg/style.css">
+</head>
+<body>
+    <H1>BMG File format documentation (Super Mario Galaxy edition)</H1>
+    <p>
+        Super Mario Galaxy uses the BMG format to store every text string. 
+        There is only one file for every string. Message IDs aren’t stored in it though. 
+        They’re stored in a separate tbl (bcsv) file called “messageid.tbl”.
+    </p>
+
+    <h2>File header:</h2>
+    <p>Every BMG file has a header. Its size is 0x20. Every number is stored in Big Endian.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Offset</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0x00</td>
+                <td>Char[8]</td>
+                <td>File magic: MESGbmg1 in ASCII</td>
+            </tr>
+            <tr>
+                <td>0x08</td>
+                <td>UInt32</td>
+                <td>File size in bytes</td>
+            </tr>
+            <tr>
+                <td>0x0C</td>
+                <td>UInt32</td>
+                <td>Number of sections (4 in SMG: FLI1 DAT1 FLW1 FLI1)</td>
+            </tr>
+            <tr>
+                <td>0x10</td>
+                <td>Byte</td>
+                <td>Encoding (1=CP1252, 2=UTF-16, 3=Shift-JIS, 4=UTF-8)</td>
+            </tr>
+            <tr>
+                <td>0x11</td>
+                <td>Byte[15]</td>
+                <td>Unknown, probably padding</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>INF1 section:</h2>
+    <p>Then comes the 1st section, it contains information about data in the string pool.</p>
+    <p><i>Section header:</i></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Offset</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0x00</td>
+                <td>Char[4]</td>
+                <td>Section magic: INF1 in ASCII</td>
+            </tr>
+            <tr>
+                <td>0x04</td>
+                <td>UInt32</td>
+                <td>Section size in bytes</td>
+            </tr>
+            <tr>
+                <td>0x08</td>
+                <td>UInt16</td>
+                <td>Number of items (message entries)</td>
+            </tr>
+            <tr>
+                <td>0x0A</td>
+                <td>UInt16</td>
+                <td>Length of each item (0x0C in SMG)</td>
+            </tr>
+            <tr>
+                <td>0x0C</td>
+                <td>UInt32</td>
+                <td><b>Unknown</b> 0s</td>
+            </tr>
+            <tr>
+                <td>0x10</td>
+                <td>Item length</td>
+                <td>Message attributes. Size (in bytes) = LENGTH * MESSAGES</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Then comes the items</p>
+    <p><i>Item:</i></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Offset</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0x00</td>
+                <td>UInt32</td>
+                <td>Offset in DAT1 from the beginning of the string pool</td>
+            </tr>
+            <tr>
+                <td>0x04</td>
+                <td>Byte</td>
+                <td><b>Unknown</b> attribute</td>
+            </tr>
+            <tr>
+                <td>0x05</td>
+                <td>Byte</td>
+                <td>Camera (to figure out)</td>
+            </tr>
+            <tr>
+                <td>0x06</td>
+                <td>Byte</td>
+                <td>Sound effect (a list will be available soon)</td>
+            </tr>
+            <tr>
+                <td>0x07</td>
+                <td>Byte</td>
+                <td><b>Unknown</b> Only 0x00 0x01 0x02 are used</td>
+            </tr>
+            <tr>
+                <td>0x08</td>
+                <td>Byte</td>
+                <td>
+                    <p>Defines how the message is triggered</p>
+                    <ul>
+                        <li>0x00: you need to talk to the NPC</li>
+                        <li>0x01: the NPC shouts</li>
+                        <li>0x02: equivalent to auto in msbconv</li>
+                        <li>0x04: <b>unknown</b> and buggy, maybe related to text flows</li>
+                        <li>0x05: you <b>can't</b> talk to the NPC</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>0x09</td>
+                <td>Byte</td>
+                <td>
+                    <p>Message layout (I don't know how to say it):</p>
+                    <ul>
+                        <li>0x00: default value, it's the classic rectangle</li>
+                        <li>0x01: same but it doesn't work (triggers the crash handler)</li>
+                        <li>
+                            0x02: even when you talk to NPCs, this appears <br/>
+                            <img src="#" alt="shout bubble when talking to npc">
+                        </li>
+                        <li>0x03: classic rectangle w/o the A button icon</li>
+                        <li>0x04: sign layout</li>
+                        <li>
+                            0x05: this <br/>
+                            <img src="#" alt="the first time you take a powerup">
+                        </li>
+                    </ul>
+                    <p style="color: red;">Usable values are 0x00, 0x04 and 0x05</p>
+                </td>
+            </tr>
+            <tr>
+                <td>0x0A</td>
+                <td>Byte</td>
+                <td>Message areas. 0xFF most of the time, sometimes 0x00</td>
+            </tr>
+            <tr>
+                <td>0x0B</td>
+                <td>Byte</td>
+                <td>Always 0xFF. Ends an item</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p style="color: red; font-size: 2em;">This documentation isn't finished. It takes time to copy a word document to HTML</p>
+</body>
+</html>
